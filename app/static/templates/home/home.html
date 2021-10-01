@@ -1,0 +1,86 @@
+{% extends "base/base.html" %} 
+{% load static %}
+
+<!-- Add CSS Style -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home/home.css' %}" />
+{% endblock %}
+
+<!-- Add Page Content -->
+
+{% block content %}
+
+<div id="content">
+  <!--===== HEADER =====-->
+  <div class="topbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!--===== BUTTON =====-->
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>        
+        </button>
+        <button
+          class="btn btn-dark d-inline-block d-lg-none ml-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <!--===== SUB-MENU =====-->
+        <div class="collapse navbar-collapse nav__menu" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item" {% if request.path == '/' %}active{% endif %}>
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item" {% if request.path == '/#about' %}active{% endif %}>
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item" {% if request.path == '/#skills' %}active{% endif %}>
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+    </nav> 
+  </div> 
+
+    <!--===== CONTENT =====-->
+
+    <!--===== HOME =====-->
+    <section class="home" id="home">
+      <div class="home__container bd-grid">
+          <h1 class="home__title"><span>HE</span><br>LLO.</h1>
+
+          <div class="home__scroll">
+              <a href="#about" class="home__scroll-link"><i class="fas fa-arrow-up"></i>    Scroll down</a>
+          </div>
+
+          <img src="{% static 'img/pruebas/guy-gdefa3a39f_1920.png' %}" alt="" class="home__img">
+      </div>
+    </section>
+
+  
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+<!--===== SCROLL REVEAL =====-->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--===== MAIN JS =====-->
+<script src= {% static 'js/home/home.js' %} ></script>
+
+{% endblock content %}
