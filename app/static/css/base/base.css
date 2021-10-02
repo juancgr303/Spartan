@@ -258,6 +258,9 @@ ul ul a {
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
+    h4{
+        color: rgba(0, 0, 0, 0);
+    }
     #sidebar {
         min-width: 80px;
         max-width: 80px;
