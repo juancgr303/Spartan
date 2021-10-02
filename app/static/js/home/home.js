@@ -1,9 +1,9 @@
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
-    distance: '80px',
-    duration: 2000,
-    reset: true
+    distance: '40px',
+    duration: 1000,
+    reset: false,
 })
 
 /*SCROLL HOME*/
@@ -16,7 +16,7 @@ sr.reveal('.about__img', {delay: 500})
 sr.reveal('.about__subtitle', {delay: 300})
 sr.reveal('.about__profession', {delay: 400})
 sr.reveal('.about__text', {delay: 500})
-sr.reveal('.about__social-icon', {delay: 600, interval: 200})
+sr.reveal('.about__social-icon', {delay: 600, interval: 300})
 
 /*SCROLL SKILLS*/
 sr.reveal('.skills__subtitle', {})
@@ -31,3 +31,6 @@ sr.reveal('.contact__subtitle', {})
 sr.reveal('.contact__text', {interval: 200})
 sr.reveal('.contact__input', {delay: 400})
 sr.reveal('.contact__button', {delay: 600})
+
+/*SCROLL LAST BLOG ENTRY*/
+sr.reveal('.last_blog_entry', {})

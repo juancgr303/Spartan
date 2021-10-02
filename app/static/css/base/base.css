@@ -8,6 +8,7 @@
     --text-color: #999;
     --header-height: 4rem;
     --big-font-size: 10rem;
+    --h2-font-size: 1.25rem;
 }
 
 :root{
@@ -40,7 +41,7 @@ body {
 
 p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 300;
     line-height: 1.7em;
     color: var(--text-color);
@@ -79,6 +80,44 @@ a:focus {
 i,
 span {
     display: inline-block;
+}
+
+.section{
+    padding: 3rem 0;
+}
+.section-title{
+    position: relative;
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin: var(--mb-4) 0;
+    text-align: center;
+}
+.section-title::after{
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: .18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: var(--first-color);
+}
+
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }
+    .section{
+        padding-top: 4rem;
+    }
+    .section-title{
+        margin-bottom: 3rem;
+    }
+    .section-title::after{
+        width: 64px;
+        top: 3rem;
+    }
 }
 
 /* ---------------------------------------------------
