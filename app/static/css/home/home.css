@@ -51,28 +51,34 @@
     font-size: var(--big-font-size);
     color: var(--white-color);
     line-height: .8;
+    z-index: 5;
 }
 .home__title span{
     text-shadow: 0 20px 25px rgba(0,0,0,.5);
+    z-index: 5;
 }
 .home__scroll{
     align-self: flex-end;
     padding-bottom: 1rem;
+    z-index: 5;
 }
 .home__scroll-link{
     writing-mode: vertical-lr;
     transform: rotate(-180deg);
     color: var(--white-color);
+    z-index: 5;
 }
 .home__img{
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 295px;
+    width: 350px;
+    z-index: 1;
 }
 @media screen and (max-width: 320px) {
     .home__img {
       width: 230px;
+      z-index: 1;
     }
 }
 @media screen and (min-width: 768px){
@@ -84,6 +90,7 @@
     .home__img{
         width: 524px;
         right: 10%;
+        z-index: 1;
     }
 }
 @media screen and (min-height: 721px){
@@ -92,7 +99,8 @@
     }
     .home__img{
         width: 500px;
-        right: 24%;
+        right: 0%;
+        z-index: 1;
     }
 }
 

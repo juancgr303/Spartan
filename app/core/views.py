@@ -1,9 +1,22 @@
 from django.shortcuts import render, HttpResponse
 
-# Create your views here.
+from .models import *
 
-def home(request):
-    return render(request, 'home/home.html')
+# INDEX - HOME
+
+def home(request):           
+    home = Home.objects.latest('updated')
+    about = About.objects.latest('updated') 
+    profiles = Profile.objects.filter(about=about) 
+    categories = Category.objects.all()   
+
+    context = {
+        'home': home,
+        'about': about,
+        'profiles' : profiles,
+        'categories' : categories,        
+    }
+    return render(request, 'home/home.html', context)
 
 def blog(request):
     return render(request, 'blog/blog.html')
