@@ -12,7 +12,7 @@ class Home(models.Model):
     #Page Section
     greetings_1 = models.CharField(max_length=5, verbose_name='Greetings in page 1st')
     greetings_2 = models.CharField(max_length=5, verbose_name='Greetings in page 2nd')
-    picture = models.ImageField(upload_to='img/home/' , verbose_name='Your Photo')
+    picture = models.ImageField(upload_to='home/' , verbose_name='Your Photo')
     # Save time when modified
     updated = models.DateTimeField(auto_now=True)
 
@@ -24,7 +24,7 @@ class About(models.Model):
     heading = models.CharField(max_length=50, verbose_name='Heading or greetings')
     career = models.CharField(max_length=50, verbose_name='Career')
     description = models.TextField(blank=False, verbose_name='Description')
-    profile_img = models.ImageField(upload_to='img/home/', verbose_name='Your profile photo')
+    profile_img = models.ImageField(upload_to='home/', verbose_name='Your profile photo')
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):

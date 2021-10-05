@@ -1,5 +1,4 @@
-from django.shortcuts import render, HttpResponse
-
+from django.shortcuts import render
 from .models import *
 
 # INDEX - HOME
@@ -18,8 +17,6 @@ def home(request):
     }
     return render(request, 'home/home.html', context)
 
-def blog(request):
-    return render(request, 'blog/blog.html')
 
 
 def photography(request):

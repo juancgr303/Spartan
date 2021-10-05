@@ -1,0 +1,97 @@
+{% extends "base/base.html" %} {% load static %}
+<!-- Add CSS Style -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/blog/blog.css' %}" />
+{% endblock %}
+<!-- Add Page Content -->
+{% block content %}
+
+<div id="content">
+  <!--===== HEADER =====-->
+  <div class="topbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!--===== BUTTON =====-->
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>        
+        </button>
+        <button
+          class="btn btn-dark d-inline-block d-lg-none ml-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <!--===== SUB-MENU =====-->
+        <div class="collapse navbar-collapse nav__menu" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog:blog' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog:articles' %}">Articles</a>
+            </li>              
+          </ul>
+        </div>
+      </div>
+    </nav> 
+  </div> 
+  <!--===== CONTENT =====-->
+
+  <div class = "container2">
+    <div class = "title">
+      <h2>All Articles</h2>
+    </div>
+    <form method="GET">
+      <input type="text" id="query" name="query" class="textbox" placeholder="Search">
+      <button type = "submit" class="button">
+        <i class='fas fa-search'></i>
+      </button>
+    </form>
+    <div class="article-meta">
+      <a class="back-button" href="{% url 'blog:articles' %}">All Articles</a>
+      {% for tag in tags %}
+      <span class="tag"><a href="{{ tag.name.url }}">{{ tag.name }}</a></span>
+      {% endfor %}
+    </div>
+
+    <hr>
+
+    <div class = "featured-content">
+      {% for article in articles %}
+      <!-- item -->
+      <div class = "featured-item">
+        <div class = "featured-img">
+          <a href="{{ article.get_absolute_url }}">
+            <img src = "{{ article.image.url }}" alt = "">
+            <span><i class='far fa-calendar'></i>{{ article.publish|date:" D M Y " }}</span>
+            <span>{{ article.sub_headline }}</span>
+          </a>
+        </div>
+        <div class = "featured-title">
+          <a href = "{{ article.get_absolute_url }}">{{ article.headline }}</a>
+        </div>
+      </div>
+      <!-- end of item -->
+      {% empty %}
+			  <h3>No Article found...</h3>  
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+
+  
+</div>
+<!--===== JS =====-->
+<!--===== SCROLL REVEAL =====-->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!--===== MAIN JS =====-->
+<script src= {% static 'js/blog/blog.js' %} ></script>
+
+{% endblock content %}

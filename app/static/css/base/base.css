@@ -165,6 +165,8 @@ span {
 
 #sidebar ul li a {
     text-align: left;
+    font-size: 1.2em !important;
+    padding: 20px 10px !important;
     
 }
 
@@ -305,5 +307,22 @@ ul ul a {
     }
     #sidebarCollapse span {
         display: none;
+    }
+}
+/*===== GLOBAL CONTENT =====*/
+
+#content {
+    width: 100%;
+    padding: 10px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 768px){
+    #content {
+        width: 100%;
+        padding: 0px;
+        min-height: 100vh;
+        transition: all 0.3s;
     }
 }
