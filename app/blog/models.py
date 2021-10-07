@@ -39,8 +39,6 @@ class Article(models.Model):
     body = RichTextUploadingField(null=True, blank=True)
     featured = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag, blank=True)
-
-
     options = (
         ('draft', 'Draft'),
         ('published', 'Published'),

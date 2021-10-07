@@ -1,0 +1,75 @@
+{% extends "base/base.html" %} {% load static %}
+<!-- Add CSS Style -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/gallery/gallery.css' %}" />
+{% endblock %}
+<!-- Add Page Content -->
+{% block content %}
+
+<div id="content">
+  <!--===== HEADER =====-->
+  <div class="topbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!--===== BUTTON =====-->
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>        
+        </button>
+        <button
+          class="btn btn-dark d-inline-block d-lg-none ml-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <!--===== SUB-MENU =====-->
+        <div class="collapse navbar-collapse nav__menu" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gallery:gallery' %}">All</a>
+            </li>
+            {% for Category in categories %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gallery:gallery' %}?Category={{Category.name}}">
+              {{Category.name}}</a>
+            </li> 
+            {% empty %}
+			      <h3>No Categories found...</h3>  
+            {% endfor %}                
+          </ul>
+        </div>
+      </div>
+    </nav> 
+  </div> 
+  <!--===== CONTENT =====-->
+  <section class = "gallery" id = "gallery"> 
+    <div class='row'>
+      {% for img in images %}        
+        <div class="photo">
+          <a href="">
+            <img src="{{img.image.url}}">
+            <ul class="layer">
+              <li>Photo Spot: {{img.place}}</li>
+              <li>Camera: {{img.camera}}</li>
+              <li>Lens: {{img.lens}}</li>
+              <li>Aperture: {{img.aperture}}</li>
+              <li>Speed: {{img.speed}}</li>
+              <li>ISO: {{img.iso}}</li>              
+            </ul>                
+          </a>
+        </div>       
+      {% endfor %}
+    <div>
+  </section>  
+</div>
+<!--===== JS =====-->
+<!--===== SCROLL REVEAL =====-->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!--===== MAIN JS =====-->
+<script src= {% static 'js/gallery/gallery.js' %} ></script>
+
+{% endblock content %}

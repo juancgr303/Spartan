@@ -18,13 +18,8 @@ def home(request):
     return render(request, 'home/home.html', context)
 
 
-
-def photography(request):
-    return render(request, 'photography/photography.html')
-
-
-def porfolio(request):
-    return render(request, 'porfolio/porfolio.html')
+def portfolio(request):
+    return render(request, 'portfolio/portfolio.html')
 
 
 def contact(request):

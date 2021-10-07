@@ -55,7 +55,7 @@
           <div class = "featured-img">
             <a href="{{ article.get_absolute_url }}">
               <img src = "{{ article.image.url }}" alt = "">
-              <span><i class='far fa-calendar'></i>{{ article.publish|date:"M Y" }}</span>
+              <span><i class='far fa-calendar'></i> {{ article.publish|date:" D M Y" }}</span>
               <span>{{ article.sub_headline }}</span>
             </a>
           </div>

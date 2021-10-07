@@ -5,3 +5,5 @@ $(document).ready(function () {
     });
 
 });
+
+sr.reveal('h4', {delay: 300})

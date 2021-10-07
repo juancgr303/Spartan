@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # My Apps
     'core', 
     'blog',
+    'gallery',
     # Pip Apps
     'ckeditor',
     'ckeditor_uploader',
@@ -136,7 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CKEditor Settings
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'static/uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'tollbar': 'full',

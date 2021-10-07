@@ -27,13 +27,21 @@ urlpatterns = [
     # Blog
     path('blog/', include('blog.urls', namespace='blog')),
     # Photography
-    path('photography/', core_views.photography, name="photography"),
-    path('porfolio/', core_views.porfolio, name="porfolio"),
+    path('gallery/', include('gallery.urls', namespace='gallery')),
+    # Portfolio
+    path('portfolio/', core_views.portfolio, name="portfolio"),
     path('contact/', core_views.contact, name="contact"),
     # CKEditor
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
+    )
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
