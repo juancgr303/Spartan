@@ -47,18 +47,14 @@
                             <i class="fas fa-image"></i>
                             <h4>Photo gallery</h4>
                         </a>
-                    </li>
-                    <li class={% if request.path == '/portfolio/' %}active{% endif %}>
-                        <a href="/portfolio">
-                            <i class="far fa-file-code"></i>
-                            <h4>Portfolio</h4>
-                        </a>
-                    </li>               
-                    <li class={% if request.path == '/contact/' %}active{% endif %}>
-                        <a href="/contact">
+                    </li>                                  
+                    <li class={% if request.path == '/contact/' %}active{% endif %} >
+                        <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="popover" 
+                        title="Very Soon.." 
+                        data-bs-content="And here's some amazing content. It's very engaging. Right?">
                             <i class="fas fa-paper-plane"></i>
-                            <h4>Contact</h4>
-                        </a>
+                            <h4>Contact</h4>                              
+                        </button>                        
                     </li>
                     <li>
                         <a href="https://www.instagram.com/juankgmr/" target="_blank">

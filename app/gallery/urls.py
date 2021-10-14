@@ -7,6 +7,4 @@ app_name = 'gallery'
 urlpatterns = [
     path('', views.gallery, name='gallery'),
     path('photo/<str:pk>/', views.viewPhot, name='photo'),
-    
-
 ]

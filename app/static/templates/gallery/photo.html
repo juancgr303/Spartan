@@ -1,7 +1,7 @@
 {% extends "base/base.html" %} {% load static %}
 <!-- Add CSS Style -->
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/gallery/gallery.css' %}" />
+<link rel="stylesheet" href="{% static 'css/gallery/photo.css' %}" />
 {% endblock %}
 <!-- Add Page Content -->
 {% block content %}
@@ -49,12 +49,20 @@
   <section class = "photo" id = "photo"> 
       <div class="row justify-content-center">
           <div class="col">
-              <img src="{{ img.image.url }}">
-            
+              <img src="{{ photo.image.url }}">            
           </div>
-      </div>
-
-    
+      </div> 
+      <div>
+        <ul class='c1'>
+          <li>Name: {{ photo.name }}</li>
+          <li>Place: {{ photo.place }}</li>
+          <li>Camera: {{ photo.camera }}</li>
+          <li>Lens: {{ photo.lens }}</li>
+          <li>Speed: {{ photo.speed }}</li>
+          <li>Aperture: {{ photo.aperture }}</li>
+          <li>Iso: {{ photo.iso }}</li>
+        </ul>        
+      </div>        
   </section>  
 </div>
 <!--===== JS =====-->

@@ -20,12 +20,12 @@ def gallery(request):
     return render(request, "gallery/gallery.html", context)
 
 def viewPhot(request, pk):
-    images = Image.objects.get(id=pk)
+    photo = Image.objects.get(id=pk)
     home = Home.objects.latest('updated')   
     categories = Category.objects.all()
     context = {
         'home': home,
-        'images': images,        
+        'photo': photo,        
         'categories': categories,
     }
     return render(request, "gallery/photo.html", context)

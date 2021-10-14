@@ -50,7 +50,7 @@
     <div class='row'>
       {% for img in images %}        
         <div class="photo">
-          <a href="">
+          <a href="{% url 'gallery:photo' img.id%}">
             <img src="{{img.image.url}}">
             <ul class="layer">
               <li>Photo Spot: {{img.place}}</li>
